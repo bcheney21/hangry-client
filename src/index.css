@@ -46,3 +46,8 @@ nav a:hover {
   border-radius: 5px;
   padding: 2%;
 }
+
+.rest {
+  color: hotpink;
+  text-align: center;
+}
