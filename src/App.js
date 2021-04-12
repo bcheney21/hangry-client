@@ -11,11 +11,12 @@ import SaveToken from "./pages/SaveToken"
 import jwt from 'jsonwebtoken'
 import NoMatch from "./pages/NoMatch"
 import Profile from "./pages/Profile"
+import Restaurants from "./pages/Restaurants"
 
 
 const App = () => {
     const [user, setUser] = useState(null)
-
+    const [restaurants, setRestaurants] = useState([])
     // 'Login' the user from JWT if it exists in localStorage
     useEffect(() => {
         const token = localStorage.getItem('jwt')
@@ -32,7 +33,9 @@ const App = () => {
             setUser(null)
         }
     }, [])
+    useEffect(() => {
 
+    }, [])
     const handleLogout = () => {
         if(localStorage.getItem('jwt')) {
             localStorage.removeItem('jwt')
@@ -47,6 +50,9 @@ const App = () => {
                 <Switch>
                     <Route exact path="/">
                         <Home />
+                    </Route>
+                    <Route path="/restaurants">
+                        <Restaurants/>
                     </Route>
                     <Route path="/login">
                         <Login user={user} />
