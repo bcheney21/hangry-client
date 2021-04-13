@@ -16,8 +16,13 @@ const Restaurants = () => {
     let restaurant_name = <p>'restaurant loading'</p>
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
-            return <ul key={index}>{restaurant.restaurant_name}
-            <Button variant="danger" class ="button">Danger</Button>
+            return <ul key={index} className="restaurant-list">{restaurant.restaurant_name}
+            <Button 
+                variant="default" 
+                style={{color: "orange"}}
+                className="fav-button">
+                Favorite
+            </Button>
             </ul>
         }) 
     }
