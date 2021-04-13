@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Redirect } from "react-router"
 import axios from 'axios'
-
+import Button from 'react-bootstrap/Button'
 const Profile = ({ user }) => {
     useEffect(() => {
         // Example access to the auth-locked route

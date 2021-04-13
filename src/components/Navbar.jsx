@@ -13,6 +13,16 @@ const Navbar = ({ user, handleLogout }) => {
                     <span onClick={handleLogout}>Logout</span>
                 </Link>
             </li>
+            <li>
+                <Link to="/restaurants">
+                    Restaurants near you
+                </Link>
+            </li>
+            <li>
+                <Link to="/favorites">
+                    Your Favorites
+                </Link>
+            </li>
         </>
     )
     const loggedOut = (

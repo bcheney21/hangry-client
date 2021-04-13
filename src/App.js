@@ -12,6 +12,8 @@ import jwt from 'jsonwebtoken'
 import NoMatch from "./pages/NoMatch"
 import Profile from "./pages/Profile"
 import Restaurants from "./pages/Restaurants"
+import Favorites from './pages/Favorites'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
@@ -33,7 +35,7 @@ const App = () => {
             setUser(null)
         }
     }, [])
-    
+
     const handleLogout = () => {
         if(localStorage.getItem('jwt')) {
             localStorage.removeItem('jwt')
@@ -50,7 +52,10 @@ const App = () => {
                         <Home />
                     </Route>
                     <Route path="/restaurants">
-                        <Restaurants/>
+                        <Restaurants />
+                    </Route>
+                    <Route path="/favorites">
+                        <Favorites />
                     </Route>
                     <Route path="/login">
                         <Login user={user} />
