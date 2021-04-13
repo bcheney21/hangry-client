@@ -33,9 +33,7 @@ const App = () => {
             setUser(null)
         }
     }, [])
-    useEffect(() => {
-
-    }, [])
+    
     const handleLogout = () => {
         if(localStorage.getItem('jwt')) {
             localStorage.removeItem('jwt')
