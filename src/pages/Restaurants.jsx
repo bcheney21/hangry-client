@@ -17,13 +17,10 @@ const Restaurants = () => {
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
             return <ul key={index} className="restaurant-list">{restaurant.restaurant_name}
-            <Button 
-                variant="default" 
-                style={{color: "orange"}}
-                className="fav-button">
-                Favorite
-            </Button>
             </ul>
+            // <Button variant="danger" size="sm">
+            //     Favorite
+            // </Button>
         }) 
     }
     const onChangeHandler = event => {
@@ -45,7 +42,12 @@ const Restaurants = () => {
                 </label>
                 <input type="submit" value="Submit" />
             </form>
+            <ul>
             {restaurant_name}
+            <Button variant="danger" size="sm">
+            Favorite
+            </Button>
+            </ul>
         </div>
     )
 }
