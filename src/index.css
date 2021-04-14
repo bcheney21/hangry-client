@@ -31,11 +31,11 @@ nav ul li{
 nav a {
   text-decoration: none;
   margin-right: 15px;
-  color: rebeccapurple;
+  color: white;
 }
 
 nav a:hover {
-  color: burlywood;
+  color: red;
 }
 
 #login {

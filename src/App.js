@@ -4,7 +4,7 @@ import {
     Route
 } from "react-router-dom"
 import { useEffect, useState } from "react"
-import Navbar from "./components/Navbar"
+import Nav from "./components/Nav"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import SaveToken from "./pages/SaveToken"
@@ -45,7 +45,7 @@ const App = () => {
 
     return (
         <Router>
-            <Navbar user={user} handleLogout={handleLogout} />
+            <Nav user={user} handleLogout={handleLogout} />
             <div className="container">
                 <Switch>
                     <Route exact path="/">

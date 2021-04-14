@@ -29,13 +29,13 @@ const Restaurants = () => {
     const onChangeHandler = event => {
         event.preventDefault()
         setZipcode(event.target.value);
+        console.log(zipcode)
     };
     return(
         <div>
             <form>
                 <label>
                     Zipcode:
-                    {/* <input type="text" name="name" onChange={e => setZipcode(e.target.value)}/> */}
                     <input
                         type="text"
                         name="zipcode"

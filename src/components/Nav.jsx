@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-
-const Navbar = ({ user, handleLogout }) => {
+import { Navbar } from 'react-bootstrap'
+const Nav = ({ user, handleLogout }) => {
     const loggedIn = (
         <>
             <li>
@@ -31,15 +31,15 @@ const Navbar = ({ user, handleLogout }) => {
         </li>
     )
     return (
-        <nav>
+        <Navbar bg="dark" variant="dark">
             <ul>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
                 { user ? loggedIn : loggedOut}
             </ul>
-        </nav>
+        </Navbar>
     )
 }
 
-export default Navbar
+export default Nav
