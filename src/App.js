@@ -55,7 +55,7 @@ const App = () => {
                         <Restaurants />
                     </Route>
                     <Route path="/favorites">
-                        <Favorites />
+                        <Favorites user={user}/>
                     </Route>
                     <Route path="/login">
                         <Login user={user} />
