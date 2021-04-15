@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
     const [zipcode, setZipcode] = useState('93103')
-    const [newFav, setNewFav] = useState('')
     useEffect(() =>{
         async function getApi(){
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/restaurants/${zipcode}`)

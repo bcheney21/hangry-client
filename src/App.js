@@ -18,7 +18,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
     const [user, setUser] = useState(null)
-    const [restaurants, setRestaurants] = useState([])
     // 'Login' the user from JWT if it exists in localStorage
     useEffect(() => {
         const token = localStorage.getItem('jwt')

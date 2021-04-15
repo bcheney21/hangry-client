@@ -31,7 +31,7 @@ const Nav = ({ user, handleLogout }) => {
         </li>
     )
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" class="text-center">
             <ul>
                 <li>
                     <Link to="/">Home</Link>
