@@ -52,7 +52,7 @@ const App = () => {
                         <Home />
                     </Route>
                     <Route path="/restaurants">
-                        <Restaurants />
+                        <Restaurants user={user}/>
                     </Route>
                     <Route path="/favorites">
                         <Favorites user={user}/>

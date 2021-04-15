@@ -2,7 +2,7 @@ import  { useState, useEffect, onChange } from 'react'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-const Restaurants = () => {
+const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
     const [zipcode, setZipcode] = useState('93103')
     const [newFav, setNewFav] = useState('')
@@ -15,15 +15,18 @@ const Restaurants = () => {
         }
         getApi()
     }, [])
+    async function saveFavoriteRestaurant(restaurantName){
+        const url = `${process.env.REACT_APP_SERVER_URL}/users/${props.user._id}/${restaurantName}`
+        const response = await axios.post(url)
+        console.log(response)
+    }
     let restaurant_name = <p>'restaurant loading'</p>
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
-            // const url = process.env.REACT_APP_SERVER_URL + "/" + {add userid variable} + "/" + restaurant.restaurant_name
             return <Button 
             variant="secondary" 
             key={index} 
-            class="row col-12"
-            onChange={(e) => setNewFav(e.restaurant_name)}
+            onClick={() => saveFavoriteRestaurant(restaurant.restaurant_name)}
             // href={url}
             >
             {restaurant.restaurant_name}
