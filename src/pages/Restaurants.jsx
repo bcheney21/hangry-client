@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const Restaurants = () => {
     const [restaurants, setRestaurants] = useState([])
     const [zipcode, setZipcode] = useState('93103')
+    const [newFav, setNewFav] = useState('')
     useEffect(() =>{
         async function getApi(){
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/restaurants/${zipcode}`)
@@ -17,8 +18,14 @@ const Restaurants = () => {
     let restaurant_name = <p>'restaurant loading'</p>
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
-            const url = process.env.REACT_APP_SERVER_URL + "/" + {add userid variable} + "/" + restaurant.restaurant_name
-            return <Button key={index} className="restaurant-list" href={url}>
+            // const url = process.env.REACT_APP_SERVER_URL + "/" + {add userid variable} + "/" + restaurant.restaurant_name
+            return <Button 
+            variant="secondary" 
+            key={index} 
+            class="row col-12"
+            onChange={(e) => setNewFav(e.restaurant_name)}
+            // href={url}
+            >
             {restaurant.restaurant_name}
             </Button>
         }) 
