@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom'
 const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
     const [zipcode, setZipcode] = useState('93103')
-    const divStyle = {
+    const favButtonStyle = {
         justifyContent: 'center',
         marginLeft: '10px',
         marginRight: '10px',
         marginTop: '10px',
         marginBottom: '10px',
+        color: 'orange',
       };
     useEffect(() =>{
         async function getApi(){
@@ -29,15 +30,17 @@ const Restaurants = (props) => {
     let restaurant_name = <p>'restaurant loading'</p>
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
-            return <Button 
+            return <div><Button 
             variant="secondary" 
             key={index} 
-            style={divStyle}
+            style={favButtonStyle}
             onClick={() => saveFavoriteRestaurant(restaurant.restaurant_name)}
             // href={url}
             >
             {restaurant.restaurant_name}
             </Button>
+            <break/>
+            </div>
         }) 
     }
     // add user id variable 
@@ -53,7 +56,7 @@ const Restaurants = (props) => {
         <div>
             <form>
                 <label>
-                    Zipcode:
+                    Enter your Zipcode: 
                     <input
                         type="text"
                         name="zipcode"
