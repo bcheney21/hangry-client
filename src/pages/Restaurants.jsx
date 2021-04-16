@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom'
 const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
     const [zipcode, setZipcode] = useState('93103')
+    const divStyle = {
+        justifyContent: 'center',
+        marginLeft: '10px',
+        marginRight: '10px',
+        marginTop: '10px',
+        marginBottom: '10px',
+      };
     useEffect(() =>{
         async function getApi(){
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/restaurants/${zipcode}`)
@@ -25,6 +32,7 @@ const Restaurants = (props) => {
             return <Button 
             variant="secondary" 
             key={index} 
+            style={divStyle}
             onClick={() => saveFavoriteRestaurant(restaurant.restaurant_name)}
             // href={url}
             >
