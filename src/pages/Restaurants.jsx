@@ -30,16 +30,15 @@ const Restaurants = (props) => {
     let restaurant_name = <p>'restaurant loading'</p>
     if(restaurants){
         restaurant_name = restaurants.map((restaurant, index) =>{
-            return <div><Button 
+            return <div key={index}><Button 
             variant="secondary" 
-            key={index} 
             style={favButtonStyle}
             onClick={() => saveFavoriteRestaurant(restaurant.restaurant_name)}
             // href={url}
             >
             {restaurant.restaurant_name}
             </Button>
-            <break/>
+            <br/>
             </div>
         }) 
     }
