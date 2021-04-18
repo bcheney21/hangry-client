@@ -19,15 +19,19 @@ const Favorites = (props) =>{
     }, [props.user])
     const favsArray = faves.map((fave, idx) => {
         return (
-          <li key={idx} className="list-item">
+          <ul key={idx} className="list-item">
             {fave.name}
-          </li>
+          </ul>
         );
       });
     return(
         <div>
-            your favorite places to grub
-            <h1>{favsArray}</h1>
+            <div className='favs'>
+            </div>
+            <div className='favsText'>
+                <h1>Your Favorite Places to Grub</h1>
+                <p>{favsArray}</p>
+            </div>
         </div>
     )
 }

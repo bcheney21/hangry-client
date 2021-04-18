@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
-    const [zipcode, setZipcode] = useState('')
+    const [zipcode, setZipcode] = useState('93103')
     const history = useHistory()
     const favButtonStyle = {
         justifyContent: 'center',
@@ -15,6 +15,9 @@ const Restaurants = (props) => {
         marginBottom: '10px',
         color: 'orange',
       };
+    const pageStyle = {
+        justifyContent: 'center'
+    }
     useEffect(() =>{
         async function getApi(){
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/restaurants/${zipcode}`)
@@ -58,8 +61,8 @@ const Restaurants = (props) => {
         setZipcode(event.target.value);
     };
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div style={pageStyle}>
+            {/* <form onSubmit={handleSubmit}>
                 <label>
                     Enter your Zipcode: 
                     <input
@@ -70,8 +73,9 @@ const Restaurants = (props) => {
                     />
                 </label>
                 <input type="submit" value="Submit" />
-            </form>
-            {restaurant_name}
+            </form> */}
+            <h1>Displaying restaurants near 93103</h1>
+            <p>{restaurant_name}</p>
         </div>
     )
 }

@@ -1,19 +1,7 @@
 *{
   font-family: 'Open Sans Condensed', sans-serif; 
 }
-body {
-  margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
 code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -26,27 +14,38 @@ code {
   color: white;
 }
 
+.favs {
+  background-image: url("https://img.food.com/img/upload/editorial/PACKAGE-COMFORT-FOOD/2016-12-23%20-%20Lasagna%20all%20day/four-lasagnes-16.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .home-text {
-  color: white;
+  color: orange;
+  display: inline;
+  text-align: center;
+}
+
+.favsText {
+  color: orange;
   display: inline;
   text-align: center;
 }
 
 .home-text-bg {
-  background-color: black;
+  background-color: white;
  margin: 10px;
-
 }
+
 .container {
   display: flex;
   justify-content: center;
   padding: 5%;
 }
-/* h1 {
-  display: flex;
-  justify-content: center;
-  color: red;
-} */
 
 nav ul {
   display: flex;
@@ -65,7 +64,7 @@ nav a {
 }
 
 nav a:hover {
-  color: orange;
+  color: black;
 }
 
 #login {
@@ -77,13 +76,7 @@ nav a:hover {
   padding: 2%;
 }
 
-/* .restaurant-list {
-  color: red;
-  float: right;
-  justify-content: space-between;
-  padding-right: 10px;
-} */
-
 button{
   margin: 13px 12px 12px 10px;
+
 }

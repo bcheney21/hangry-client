@@ -25,13 +25,17 @@ const Nav = ({ user, handleLogout }) => {
             </li>
         </>
     )
+    const navStyle = {
+        backgroundColor: 'orange'
+    }
     const loggedOut = (
         <li>
             <Link to="/login">Login</Link>
         </li>
     )
     return (
-        <Navbar bg="dark" variant="dark" className="text-center">
+        <Navbar style={navStyle} className="text-center">
+        {/* <Navbar bg="dark" variant="dark" className="text-center"> */}
             <ul>
                 <li>
                     <Link to="/">Home</Link>
