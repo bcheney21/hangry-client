@@ -1,10 +1,12 @@
 import  { useState, useEffect, onChange } from 'react'
 import axios from 'axios'
+import { useHistory } from "react-router-dom"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const Restaurants = (props) => {
     const [restaurants, setRestaurants] = useState([])
-    const [zipcode, setZipcode] = useState('93103')
+    const [zipcode, setZipcode] = useState('')
+    const history = useHistory()
     const favButtonStyle = {
         justifyContent: 'center',
         marginLeft: '10px',
@@ -45,15 +47,19 @@ const Restaurants = (props) => {
     // add user id variable 
     // axios.post wrapped around when button is clicked
 
-
+    const handleSubmit = event => {
+        event.preventDefault()
+        setZipcode(zipcode);
+        console.log(zipcode)
+        history.push(`/restaurants/${zipcode}`)
+    }
     const onChangeHandler = event => {
         event.preventDefault()
         setZipcode(event.target.value);
-        console.log(zipcode)
     };
     return(
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Enter your Zipcode: 
                     <input
